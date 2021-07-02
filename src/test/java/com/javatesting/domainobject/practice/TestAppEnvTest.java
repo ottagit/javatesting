@@ -1,19 +1,25 @@
 package com.javatesting.domainobject.practice;
 
-import com.javatesting.domainobject.TestAppEnv;
+import static com.javatesting.domainobject.TestAppEnv.*;
+
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import org.junit.Assert.*;
 
 public class TestAppEnvTest {
     @Test
     public void canGetUrlStatically() {
-        assertEquals("Returns Hard Coded URL", "http://192.123.0.3:67", TestAppEnv.getUrl());
+        Assert.assertEquals("Returns Hard Coded URL",
+                "http://192.123.0.3:67",
+                getUrl());
     }
 
     @Test
     public void canGetDomainAndPortStatically() {
-        assertEquals("Just the domain", "192.123.0.3",TestAppEnv.DOMAIN);
-        assertEquals("Just the port", "67", TestAppEnv.PORT);
+        Assert.assertEquals("Just the domain",
+                "192.123.0.3",
+                DOMAIN);
+        Assert.assertEquals("Just the port", "67", PORT);
     }
 }
