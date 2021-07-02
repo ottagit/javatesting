@@ -10,4 +10,10 @@ public class FirstTest {
         int product = 2 * 3;
         assertEquals("2*3=6", 6, product);
     }
+
+    @Test
+    public void canDivideFourByTwo() {
+        int div = 4 / 2;
+        assertEquals("4/2=2", 2, div);
+    }
 }
