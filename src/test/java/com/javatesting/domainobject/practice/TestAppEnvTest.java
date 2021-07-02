@@ -1,11 +1,9 @@
 package com.javatesting.domainobject.practice;
 
-import static com.javatesting.domainobject.TestAppEnv.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-import org.junit.Assert.*;
+import static com.javatesting.domainobject.TestAppEnv.*;
 
 public class TestAppEnvTest {
     @Test
