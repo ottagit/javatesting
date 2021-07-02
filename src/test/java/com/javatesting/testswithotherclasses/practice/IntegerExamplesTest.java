@@ -1,4 +1,4 @@
-package testswithotherclasses.practice;
+package com.javatesting.testswithotherclasses.practice;
 
 import org.junit.Test;
 
