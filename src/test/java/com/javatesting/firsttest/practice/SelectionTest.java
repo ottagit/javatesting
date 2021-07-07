@@ -64,8 +64,8 @@ public class SelectionTest {
 
     @Test
     public void intInWords() {
-        int num = (int) Math.floor(Math.random() * 10);
-        assertEquals("1 is One", "One", numInWords(num));
+        int nums[] = { 1, 2, 3, 4, 5, 6 };
+        assertEquals("1 is One", "One", numInWords(nums[0]));
     }
 
     private String numInWords(int num) {
