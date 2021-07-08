@@ -3,9 +3,11 @@ package com.javatesting.domainentities.practice;
 import com.javatesting.domainentities.User;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class UserTest {
     @Test
@@ -81,5 +83,33 @@ public class UserTest {
         assertEquals("first inner array is of size 3", 3, ragged_2d[0].length);
         assertEquals("first inner array is of size 2", 2, ragged_2d[3].length);
         assertEquals("default value is zero", 0, ragged_2d[0][0]);
+    }
+    @Test
+    public void canCreateCollectionOfUsers() {
+        Collection<User> userCollection = new ArrayList<>();
+        assertEquals("No users", 0, userCollection.size());
+        assertTrue("User collection is empty", userCollection.isEmpty());
+        // Create two User objects
+        User user1 = new User("john_doe", "john123");
+        User user2 = new User("jane_doe", "jane123");
+        userCollection.add(user1);
+        userCollection.add(user2);
+        assertEquals("2 users in collection", 2, userCollection.size());
+        assertFalse("User collection is not empty", userCollection.isEmpty());
+        // Create a second collection with two different users
+        Collection<User> userCollection1 = new ArrayList<>();
+        User user3 = new User("user3name", "user3password");
+        User user4 = new User("user4name", "user4password");
+        userCollection1.add(user3);
+        userCollection1.add(user4);
+        userCollection.addAll(userCollection1);
+        assertTrue("Collection 2 is a superset of collection 1",
+                userCollection.containsAll(userCollection1));
+        // Remove all users from the second collection
+        userCollection.removeAll(userCollection1);
+        assertFalse("Collection 2 is not a subset of collection 1",
+                userCollection.containsAll(userCollection1));
+        userCollection.clear();
+        assertTrue("Collection 1 is empty", userCollection.isEmpty());
     }
 }
