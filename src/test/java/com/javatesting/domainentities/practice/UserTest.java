@@ -53,16 +53,15 @@ public class UserTest {
         }
         User[] people;
         people = Arrays.copyOf(users, 5);
-        assertEquals("unassigned values set to default",
-                null, people[3]);
+        assertNull("unassigned values set to default", people[3]);
         // Copy range in array
         User[] clones = Arrays.copyOfRange(users, 1, 3);
         assertEquals("clone of second user", clones[0], users[1]);
         // Use an end item count > array length to increase size of array
         String[] workdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
         String[] mid_days = Arrays.copyOfRange(workdays, 2, 7);
-        assertEquals("Saturday is not a work day", null, mid_days[3]);
-        assertEquals("Sunday is not a work day", null, mid_days[4]);
+        assertNull("Saturday is not a work day", mid_days[3]);
+        assertNull("Sunday is not a work day", mid_days[4]);
         // Fill range with specific values
         Arrays.fill(mid_days, 3, 5, "Weekend");
         assertEquals("set Saturday to weekend", "Weekend", mid_days[3]);

@@ -12,6 +12,10 @@ public class User {
 
     public User(String username, String password) {
         this.username = username;
+        // Throw exception if password is less than 7 characters
+        if(password.length() < 7) {
+            throw new IllegalArgumentException("Password must be greater than 6 characters");
+        }
         this.password = password;
     }
 
